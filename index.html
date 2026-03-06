@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* মেইন এন্ট্রেন্স পাসওয়ার্ড স্টাইল */
+        /* মেইন এন্ট্রেন্স পাসওয়ার্ড স্টাইল */
         #main-lock {
             position: fixed;
             inset: 0;
@@ -167,13 +167,11 @@
         }
     </style>
 </head>
-
 <body oncontextmenu="return false">
-
     <div id="main-lock">
         <h2 style="color: #C2185B;">প্রবেশাধিকার সংরক্ষিত</h2>
-        <p>ফাইলটি ওপেন করতে পাসওয়ার্ড দিন</p>
-        <input type="password" id="mainPass" placeholder="পাসওয়ার্ড দিন" style="width: 250px;">
+        <p>ফাইলটি ওপেন করতে পাসওয়ার্ড দিন</p>
+        <input type="password" id="mainPass" placeholder="পাসওয়ার্ড দিন" style="width: 250px;">
         <br>
         <button class="btn-style" onclick="checkMainPass()">প্রবেশ করুন</button>
     </div>
@@ -198,21 +196,23 @@
 
     <div id="second-page">
         <h2 class="second-page-title">আমার মনে সম্পূর্ণ ভাব তোমাকে উপহার দেওয়ার হলো</h2>
+        
         <img src="https://drive.google.com/thumbnail?id=1y8J8ao9CnyW7MSJ3MZIuF1H3eDpFGX8k&sz=w1200" class="gift-img" alt="Birthday Gift">
+
         <div class="btn-group">
-            <button class="btn-style" style="background: #1976D2; margin-top: 0;" onclick="dl()">ভিডিওটি ডাউনলোড করুন</button>
+            <button class="btn-style" style="background: #1976D2; margin-top: 0;" onclick="dl()">ছবিটি ডাউনলোড করুন</button>
             <button class="btn-secondary" onclick="goBack()">ফিরে যান</button>
         </div>
     </div>
 
     <script>
-        // মেইন পাসওয়ার্ড চেক (palash)
+        // মেইন পাসওয়ার্ড চেক (palash)
         function checkMainPass() {
             const pass = document.getElementById('mainPass').value;
             if (pass === "palash") {
                 document.getElementById('main-lock').style.display = 'none';
             } else {
-                alert("ভুল পাসওয়ার্ড!");
+                alert("ভুল পাসওয়ার্ড!");
             }
         }
 
@@ -236,7 +236,8 @@
         function dl() {
             const p = prompt("ডাউনলোড পাসওয়ার্ড:");
             if (p === "iloveu2") {
-                window.location.href = "https://drive.google.com/uc?export=download&id=1xIrb7wOSZO-h5ImrUqpohrzThxkspE2-";
+                // ২ নং সমস্যার সমাধান: ভিডিও লিঙ্কের বদলে ছবির আইডি (1y8J8ao9...) বসানো হয়েছে
+                window.location.href = "https://drive.google.com/uc?export=download&id=1y8J8ao9CnyW7MSJ3MZIuF1H3eDpFGX8k";
             } else { alert("পাসওয়ার্ড ভুল!"); }
         }
 
