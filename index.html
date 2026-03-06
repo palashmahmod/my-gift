@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শুভ জন্মদিন - উপহার</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* মেইন এন্ট্রেন্স পাসওয়ার্ড স্টাইল */
+        #main-lock {
+            position: fixed;
+            inset: 0;
+            background: #fff1f1;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        * { box-sizing: border-box; }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Hind Siliguri', sans-serif;
+            overflow: hidden;
+        }
+
+        .main-wrapper {
+            background-image: url('background.jpg');
+            background-size: 100% 100%;
+            background-position: center;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .frame-content {
+            width: 80%; 
+            max-width: 340px;
+            height: 85%; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+        }
+
+        .birthday-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-top: 25px; 
+            color: #C2185B;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        #login-section {
+            margin-top: 250px; 
+            width: 100%;
+        }
+
+        #login-section p {
+            color: #C2185B;
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        input[type="password"] {
+            width: 85%;
+            padding: 10px;
+            border: 2px solid #F06292;
+            border-radius: 8px;
+            text-align: center;
+            outline: none;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-style {
+            background: linear-gradient(45deg, #D81B60, #8E24AA);
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .footer-text {
+            font-size: 1.2rem;
+            color: #880E4F;
+            font-weight: 700;
+            margin-top: auto;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px white;
+        }
+
+        #second-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .second-page-title {
+            color: #C2185B;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .gift-img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        .btn-secondary {
+            background: #444;
+            color: white;
+            padding: 12px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        #chrome-only {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: white;
+            z-index: 9999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false">
+
+    <div id="main-lock">
+        <h2 style="color: #C2185B;">প্রবেশাধিকার সংরক্ষিত</h2>
+        <p>ফাইলটি ওপেন করতে পাসওয়ার্ড দিন</p>
+        <input type="password" id="mainPass" placeholder="পাসওয়ার্ড দিন" style="width: 250px;">
+        <br>
+        <button class="btn-style" onclick="checkMainPass()">প্রবেশ করুন</button>
+    </div>
+
+    <div id="chrome-only">
+        <h2 style="color: #D81B60;">নিরাপত্তা সতর্কতা!</h2>
+        <p>সেরা অভিজ্ঞতার জন্য <b>Google Chrome</b> ব্রাউজার ব্যবহার করুন।</p>
+    </div>
+
+    <div class="main-wrapper" id="page-1">
+        <div class="frame-content">
+            <h1 class="birthday-title">শুভ জন্মদিন</h1>
+            <div id="login-section">
+                <p>ছোট উপহারটি দেখতে লগিন করো</p>
+                <input type="password" id="uPass" placeholder="পাসওয়ার্ড দিন">
+                <br>
+                <button class="btn-style" onclick="unlock()">লগিন</button>
+            </div>
+            <p class="footer-text">পলাশ মাহমুদ</p>
+        </div>
+    </div>
+
+    <div id="second-page">
+        <h2 class="second-page-title">আমার মনে সম্পূর্ণ ভাব তোমাকে উপহার দেওয়ার হলো</h2>
+        <img src="https://drive.google.com/thumbnail?id=1y8J8ao9CnyW7MSJ3MZIuF1H3eDpFGX8k&sz=w1200" class="gift-img" alt="Birthday Gift">
+        <div class="btn-group">
+            <button class="btn-style" style="background: #1976D2; margin-top: 0;" onclick="dl()">ভিডিওটি ডাউনলোড করুন</button>
+            <button class="btn-secondary" onclick="goBack()">ফিরে যান</button>
+        </div>
+    </div>
+
+    <script>
+        // মেইন পাসওয়ার্ড চেক (palash)
+        function checkMainPass() {
+            const pass = document.getElementById('mainPass').value;
+            if (pass === "palash") {
+                document.getElementById('main-lock').style.display = 'none';
+            } else {
+                alert("ভুল পাসওয়ার্ড!");
+            }
+        }
+
+        const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (!isChrome) { document.getElementById('chrome-only').style.display = 'flex'; }
+
+        function unlock() {
+            const val = document.getElementById('uPass').value;
+            if (val === "iloveu") {
+                document.getElementById('page-1').style.display = 'none';
+                document.getElementById('second-page').style.display = 'flex';
+            } else { alert("ভুল পাসওয়ার্ড!"); }
+        }
+
+        function goBack() {
+            document.getElementById('second-page').style.display = 'none';
+            document.getElementById('page-1').style.display = 'flex';
+            document.getElementById('uPass').value = "";
+        }
+
+        function dl() {
+            const p = prompt("ডাউনলোড পাসওয়ার্ড:");
+            if (p === "iloveu2") {
+                window.location.href = "https://drive.google.com/uc?export=download&id=1xIrb7wOSZO-h5ImrUqpohrzThxkspE2-";
+            } else { alert("পাসওয়ার্ড ভুল!"); }
+        }
+
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
+</body>
+</html>
